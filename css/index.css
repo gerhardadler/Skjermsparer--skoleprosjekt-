@@ -1,0 +1,23 @@
+.screensaver-title {
+    text-align: center;
+}
+
+.screensaver-links {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.screensaver-links a {
+    display: block;
+    padding: 1em;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-weight: bold;
+}
+
+.screensaver-links a:hover{
+    background-color: white;
+    color: var(--background-color);
+    transition-duration: 100ms;
+}
