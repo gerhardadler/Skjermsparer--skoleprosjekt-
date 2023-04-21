@@ -1,6 +1,30 @@
+<script>
+    const list = $("nav ul")
+    const hamburger_container = $("#hamburger-container")
+    // leaves display styling to css when on desktop
+    window.matchMedia("(max-width: 460px)").addListener((event) => {
+        if (event.matches === false) {
+            list.css("display", "");
+        }
+    })
+    hamburger_container.focusin(() => {
+        list.css("display", "flex")
+    })
+
+    list.mousedown((event) => {
+        event.stopPropagation(); // prevent event bubbling
+    });
+
+    $(document).mousedown(() => {
+        list.css("display", "none");
+    });
+</script>
+
 <a href="/index.html" class="nav-logo">skjermsparer.no</a>
 <ul>
     <li><a href="/dvd">DVD</a></li>
-    <li><a href="#">Akvarium</a></li>
+    <li><a href="/akvarium"">Akvarium</a></li>
     <li><a href="#">Fyrverkeri</a></li>
 </ul>
+<!-- Hamburger is shown on small screens, and ul is hidden -->
+<button id="hamburger-container"><i class="fa-solid fa-bars fa-lg"></i></button>
