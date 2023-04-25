@@ -8,7 +8,7 @@ function setRandomHue(colorMatrix) {
 }
 
 // Create the sprite and add it to the stage
-const sprite = PIXI.Sprite.from("/images/pelle_nerd.png");
+const sprite = PIXI.Sprite.from("images/pelle_nerd.png");
 
 const colorMatrix = new PIXI.ColorMatrixFilter();
 
