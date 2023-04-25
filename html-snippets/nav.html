@@ -7,8 +7,11 @@
             list.css("display", "");
         }
     })
+
+    let isHamburgerSelected = false;
     hamburger_container.focusin(() => {
-        list.css("display", "flex")
+        list.css("display", "flex");
+        isHamburgerSelected = true;
     })
 
     list.mousedown((event) => {
@@ -16,7 +19,10 @@
     });
 
     $(document).mousedown(() => {
-        list.css("display", "none");
+        if (isHamburgerSelected) {
+            list.css("display", "none");
+            isHamburgerSelected = false;
+        }
     });
 </script>
 
