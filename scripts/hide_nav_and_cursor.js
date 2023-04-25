@@ -15,12 +15,13 @@ $(document).ready(function () {
     const body = $("body");
     const nav = $(".include-nav-snippet");
     let timeout;
-
+    
     timeout = setTimeout(() => {
         body.css("cursor", "none");
         nav.css("visibility", "hidden");
     }, 3000);
-
+    
+    // whenever the mouse is moved or the screen is touched, the nav is shown
     document.addEventListener("mousemove", (event) => {
         timeout = resetHideTimeout(timeout, nav, body);
     });

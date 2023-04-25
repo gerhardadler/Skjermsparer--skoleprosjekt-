@@ -7,7 +7,6 @@ function setRandomHue(colorMatrix) {
     colorMatrix.hue(Math.floor(Math.random() * 360));
 }
 
-// Create the sprite and add it to the stage
 const sprite = PIXI.Sprite.from("images/pelle_nerd.png");
 
 const colorMatrix = new PIXI.ColorMatrixFilter();
@@ -19,8 +18,7 @@ app.stage.addChild(sprite);
 let elapsed = 0.0;
 const velocity = [1, 1];
 app.ticker.add((delta) => {
-    elapsed += delta;
-    console.log(app.ticker.FPS);
+    // The sprite will change velocity and color when hitting the corner
     if (sprite.x + sprite.width > app.renderer.width) {
         velocity[0] = -1;
         sprite.x = app.renderer.width - sprite.width;
@@ -43,6 +41,4 @@ app.ticker.add((delta) => {
 
     sprite.x += velocity[0];
     sprite.y += velocity[1];
-    
-    // console.log(sprite.x, sprite.y)
 });
